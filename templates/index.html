@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <style>
+    .bg-cover {
+      background-size: cover !important;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    h3 {
+      color: white;
+    }
+  </style>
+  <title>Disease Prediction system</title>
+</head>
+
+<body>
+  <center>
+    <!-- Bootstrap Static Header -->
+    <div style="
+          background-image: url(https://www.euractiv.com/wp-content/uploads/sites/2/2021/02/digital-800x450.jpg);
+        " class="jumbotron bg-cover text-white">
+      <div class="container py-5 text-center">
+        <h1 class="display-4 font-weight-bold">Disease Prediction System</h1>
+        <p class="font-italic">
+          <h3>Select the Symptom You think you might have and it will predict the
+            disease or conditon you could be suffering From.</h3>
+          <a href="https://bootstrapious.com" class="text-white"> </a>
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div class="login-box">
+      <form action="{{ url_for('number')}}" method="post">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Enter Number Of Symptoms</Select></label>
+          </div>
+          <select class="custom-select" name="scc" id="Select01">
+            <option selected value="Select">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-dark">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>submit</button>
+      </form>
+      <br>
+      <br>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <h3>{{ message }}</h3>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+  </center>
+</body>
+
+</html>
