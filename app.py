@@ -256,6 +256,7 @@ def diseaseDetail(term):
 
 @app.route("/")
 def home():
+    print("Redirecting To Home Page")
     return render_template("index.html")
 
 
