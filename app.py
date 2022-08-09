@@ -256,7 +256,6 @@ def diseaseDetail(term):
 
 @app.route("/")
 def home():
-    redirect("redirect.html")
     return render_template("index.html")
 
 
